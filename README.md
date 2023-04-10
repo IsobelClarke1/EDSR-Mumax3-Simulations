@@ -5,4 +5,5 @@ MSci Project Simulations
 
 
 Notes:
-\item 
+* item
+`open` 
