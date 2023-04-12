@@ -1,0 +1,83 @@
+// set cell size
+cx := 5e-9
+cy := 66e-10 // dot region will correspond to 100 cells
+cz := 5e-9
+
+// magnets - height along y, width along x, thickness along z
+magnet_height := 300e-9
+magnet_width := 100e-9
+magnet_thickness := 50e-9
+
+// position of magnets
+x_displacement_magnet := 150e-9 
+y_displacement_magnet := 530e-9  
+
+// GridSize set in prime factors as mumax does FFT
+// (x,y,z)
+SetGridsize(300, 276, 64)
+SetCellsize(cx, cy, cz)
+
+// define magnet and nanotube
+magnets := universe().sub(universe())
+system := universe().sub(universe())
+rect1 := cuboid(magnet_width, magnet_height, magnet_thickness)
+
+
+// start at 0, end at 0 and add 1 - therefore, i is 0
+// top_left(-500, 380, 0)
+// top_right(500, 380, 0)
+// bottom_left(0, -380, 0)
+for i := 0; i <= 0; i += 1 {
+        top_left := rect1.transl(-i*magnet_width*2-x_displacement_magnet, y_displacement_magnet, 0)
+        top_right := rect1.transl(i*magnet_width*2+x_displacement_magnet, y_displacement_magnet, 0)
+        bottom_left := rect1.transl(-i*magnet_width*2, -y_displacement_magnet, 0)
+        if i > 0 {
+                bottom_right := rect1.transl(i*magnet_width*2, -y_displacement_magnet, 0)
+                magnets = magnets.add(top_left).add(bottom_left).add(top_right).add(bottom_right)
+        } else {
+                magnets = magnets.add(top_left).add(bottom_left).add(top_right)
+        }
+}
+
+system = system.add(magnets)
+
+// finalise the geometry to a given shape
+setgeom(system)
+// save image of quantity
+snapshot(geom)
+
+// define magnet and nanotube regions
+DefRegion(1, magnets)
+save(regions)
+
+// geometry edge smoothing - stop localising in corners
+// 8 = very smooth (max)
+EdgeSmooth = 8
+
+// empty space parameters
+Msat.SetRegion(0, 0)
+m.SetRegion(0, uniform(0, 0, 0))
+Aex.SetRegion(0, 0)
+
+// Permalloy parameters for magnets
+// Msat - Saturation mag., Aex - Exchange stiffness, alpha - Landau-Lifshitz damping constant
+Msat.SetRegion(1, 800e3)
+Aex.SetRegion(1, 13e-12)
+alpha.SetRegion(1, 0.05)
+// set reduced magnetization in magnet
+m.SetRegion(1, randomMag())
+
+// apply external magnetic field in y-direction
+B_ext = vector(0, 250e-3, 0)
+
+// relax the system - this minimises the total energy
+relax()
+
+// can apply a new external field
+//B_ext = vector(0, 10e-3, 0)
+//relax()
+
+// save effective magnetic field
+save(B_eff)
+// save the Magnetostatic field - gives magnetic field contribution of just the magnets, without external field
+save(B_demag)
