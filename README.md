@@ -4,7 +4,7 @@ This repository contains the code written in my MSci Physics project. My project
 
 
 ### Magnetic Field Profile.txt
---
+---------
 Mumax3 code to obtain the effective magnetic field in the $x$, $y$ and $z$ direction due to 3 micromagnets. 
 
 ### Magnetic Field Plot.py
