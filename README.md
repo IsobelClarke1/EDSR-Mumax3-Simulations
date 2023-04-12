@@ -3,17 +3,16 @@
 This repository contains the code written in my MSci Physics project. My project simulates the reponse of a carbon nanotube spin qubit experiencing Electric Dipole Spin Resonance (EDSR). The first generation design of the carbon nanotube (CNT) quantum dot device used by the Quantum Devices was simulated. Hence, a realistic electric field and magnetic field were implemented into the simulation. 
 
 
-### Magnetic Field Profile.txt
----------
+## Magnetic Field Profile.txt
 Mumax3 code to obtain the effective magnetic field in the $x$, $y$ and $z$ direction due to 3 micromagnets. 
 
-### Magnetic Field Plot.py
+## Magnetic Field Plot.py
 A Python code for extracting and plotting the magnetic field profiles from the Mumax3 simulation. 
 
-## `Tkwant CNT EDSR Simulator.py'
+## Tkwant CNT EDSR Simulator.py
 A Python code to define the CNT system in Kwant and evolve the ground state using Tkwant. The full EDSR simulation can be run using the `__init__` function. The system is defined by a set number of lattice points and the full simulation time specified in seconds. 
 
-###### The `__init__` function:
+##### The `__init__` function:
 
 **Arguements**:
 * `hamiltonian`: the full EDSR Hamiltonian to describe the system
@@ -39,7 +38,7 @@ All the data and graphs are saved.
 * A break can be implemented in the evolution loop to evaluate the system after a certain time frame.
 
 
-## `Qiskit CNT EDSR Simulator.py'
+## Qiskit CNT EDSR Simulator.py
 A Python code to evolve an initial eigenvector using Qiskit Dynamics for a effective qubit Hamiltonian defined by parameters from Kwant. 
 The parameters .. are defined by the Kwant system in the code .. and imported into the Qiskit simulation. 
 
