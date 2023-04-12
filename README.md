@@ -4,7 +4,7 @@ This repository contains the code written in my MSci Physics project. My project
 
 
 ## Magnetic Field Profile.txt
-Mumax3 code to obtain the effective magnetic field in the $x$, $y$ and $z$ direction due to 3 micromagnets. 
+Mumax3 code to obtain the effective magnetic field in the $x$, $y$ and $z$ direction due to 3 micromagnets on the CNT device.
 
 ## Magnetic Field Plot.py
 A Python code for extracting and plotting the magnetic field profiles from the Mumax3 simulation. 
@@ -16,20 +16,20 @@ A Python code to define the CNT system in Kwant and evolve the ground state usin
 
 **Arguements**:
 * `hamiltonian`: the full EDSR Hamiltonian to describe the system
-* `perturbation_type`: the type of time-dependent potential - specify as 'sin' or 'cos'
-* `electric_field_type`: the type of electric field perturbation - specfiy as 'see-saw' or 'gaussian'
+* `perturbation_type`: the type of time-dependent potential - define as 'sin' or 'cos'
+* `electric_field_type`: the type of electric field perturbation - define as 'see-saw' or 'gaussian'
 * `number_of_lattice`: the number of lattice points to define the CNT scattering region
 * `magnetic_field_file`: file name of real magnetic field profile obtained from Mumax3
-* `potential_type`: type of confinement potential - specify as 0: infinite square well or 1: parabolic potential
+* `potential_type`: type of confinement potential - define as 0: infinite square well or 1: parabolic potential
 
 **Output**:
 * Probability density function graph of the qubit states at $t = 0$.
-* Eigenenergy level diagram of the qubit and excited states at $t = 0$.
-* The PDF, electric field potential and expectation values of the Pauli spin matrices for each time step.
-* the effective magnetic field in the x-direction calculated using the PDF values.
+* Energy level diagram of the qubit and excited states at $t = 0$.
+* The values of the PDF, electric field potential and expectation values of the Pauli spin matrices for each time step.
+* The value of the effective magnetic field in the x-direction for each time step, calculated using the PDF values.
 * Effective magnetic field in the x-direction against time graph.
 * Rabi oscillation graph. 
-* Animation of the PDF and electric field potential evovling over time.
+* Animation of the PDF and electric field potential evolving over time.
 * Animation of the PDF, the electric field potential, the effective magnetic field in the x-direction and the Rabi oscillations over time.
 All the data and graphs are saved. 
 
@@ -43,6 +43,6 @@ A Python code to evolve an initial eigenvector using Qiskit Dynamics for a effec
 The parameters $\epsilon_z$, $\epsilon_x$ and $f$ are defined by the Kwant system in 'Tkwant CNT EDSR Simulator.py' and imported into the Qiskit simulation.
 
 **Output**:
-* A Rabi Oscillation plot showing the evolution of the qubit state defined by $|0\rangle$
-* An animation of the Rabi oscillations over time and the corresponding oscillation about the Bloch Sphere.
+* Rabi Oscillation graph showing the evolution of the qubit state, $|0\rangle$
+* Animation of the Rabi oscillations over time and the corresponding oscillation about the Bloch Sphere.
 All graphs and animations are saved.
