@@ -3,10 +3,10 @@
 This repository contains the code written in my MSci Physics project. My project simulates the reponse of a carbon nanotube spin qubit experiencing Electric Dipole Spin Resonance (EDSR). The first generation design of the carbon nanotube (CNT) quantum dot device used by the Quantum Devices was simulated. Hence, a realistic electric field and magnetic field were implemented into the simulation. 
 
 
-## `Magnetic Field Profile.txt'
+### Magnetic Field Profile.txt
 Mumax3 code to obtain the effective magnetic field in the $x$, $y$ and $z$ direction due to 3 micromagnets. 
 
-## `Magnetic Field Plot.py'
+### Magnetic Field Plot.py
 A Python code for extracting and plotting the magnetic field profiles from the Mumax3 simulation. 
 
 ## `Tkwant CNT EDSR Simulator.py'
