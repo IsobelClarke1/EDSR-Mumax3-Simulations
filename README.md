@@ -1,12 +1,15 @@
 # EDSR-Mumax3-Simulations
-MSci Project Simulations
+# Electric Dipole Spin Resonance and Magnetic Field Simulations Code
+--------
+MSci Project
 
 
 
-### `Tkwant CNT EDSR Simulator.py'
-Python code to define the CNT system in Kwant and evolve the ground state using Tkwant. The full EDSR simulation can be run using the `__init__` function. The system is defined by a set number of lattice points and a simulation time. 
+## `Tkwant CNT EDSR Simulator.py'
+The Python code to define the CNT system in Kwant and evolve the ground state using Tkwant. The full EDSR simulation can be run using the `__init__` function. The system is defined by a set number of lattice points and the full simulation time specified in seconds. 
 
-The `__init__` function:
+###### The `__init__` function:
+
 **Arguements**:
 * `hamiltonian`: the full EDSR Hamiltonian to describe the system
 * `perturbation_type`: the type of time-dependent potential - specify as 'sin' or 'cos'
@@ -24,7 +27,6 @@ The `__init__` function:
 * Rabi oscillation graph. 
 * Animation of the PDF and electric field potential evovling over time.
 * Animation of the PDF, the electric field potential, the effective magnetic field in the x-direction and the Rabi oscillations over time.
-
 All the data and graphs are saved. 
 
 **Key points**:
