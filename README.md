@@ -38,9 +38,11 @@ All the data and graphs are saved.
 * A break can be implemented in the evolution loop to evaluate the system after a certain time frame.
 
 
-## Qiskit CNT EDSR Simulator.py
+## Qiskit_CNT_EDSR_Simulator.py
 A Python code to evolve an initial eigenvector using Qiskit Dynamics for a effective qubit Hamiltonian defined by parameters from Kwant. 
-The parameters .. are defined by the Kwant system in the code .. and imported into the Qiskit simulation. 
+The parameters $\epsilon_z$, $\epsilon_x$ and $f$ are defined by the Kwant system in 'Tkwant CNT EDSR Simulator.py' and imported into the Qiskit simulation.
 
-The code outputs the Rabi Oscillation plot showing the evolution of the qubit state defined by $|0\rangle$. The code also outputs an animation of the Rabi oscillations over time and the corresponding oscillation about the Bloch Sphere.
+**Output**:
+* A Rabi Oscillation plot showing the evolution of the qubit state defined by $|0\rangle$
+* An animation of the Rabi oscillations over time and the corresponding oscillation about the Bloch Sphere.
 All graphs and animations are saved.
