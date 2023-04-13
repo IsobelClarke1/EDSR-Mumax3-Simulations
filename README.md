@@ -31,6 +31,7 @@ A Python code to define the CNT system in Kwant and evolve the ground state usin
 * Rabi oscillation graph. 
 * Animation of the PDF and electric field potential evolving over time.
 * Animation of the PDF, the electric field potential, the effective magnetic field in the x-direction and the Rabi oscillations over time.
+
 All the data and graphs are saved. 
 
 **Advice**:
@@ -45,4 +46,5 @@ The parameters $\epsilon_z$, $\epsilon_x$ and $f$ are defined by the Kwant syste
 **Output**:
 * Rabi Oscillation graph showing the evolution of the qubit state, $|0\rangle$.
 * Animation of the Rabi oscillations over time and the corresponding oscillation about the Bloch Sphere.
+
 All graphs and animations are saved.
